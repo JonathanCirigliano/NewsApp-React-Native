@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ListItem, Left, Thumbnail, Body, Text, Button, Right} from 'native-base';
-import { Alert, View, ActivityIndicator } from 'react-native'; 
+import { View } from 'react-native'; 
 import TimeAgo from './time';
 
 
@@ -16,15 +16,17 @@ export default class DataItem extends Component {
         this.props.onPress({url, title});
     }
 
-    render() {
-        return(
 
+    render() {
+
+        //stampa a video news
+        return(
             <ListItem thumbnail>
         <Left>
             <Thumbnail square source={{ uri: this.data.urlToImage != null ? this.data.urlToImage : 'https://pngimage.net/grey-png-1/' }} />
         </Left>
           <Body>
-        <Text numberOfLines={2} onPress={this.handlePress}>{this.data.title}</Text>
+        <Text numberOfLines={2}>{this.data.title}</Text>
             <Text note numberOfLines={1}>{ this.data.description }</Text>
             <View style={{flex: 1, flexDirection: 'row', marginTop: 6, marginBottom: 2}}>
                 <Text note>{this.data.source.name}</Text>
@@ -37,6 +39,7 @@ export default class DataItem extends Component {
         </Button>
     </Right>
 </ListItem>
+
         );
     }
 }

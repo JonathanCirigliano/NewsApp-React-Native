@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Right, Button } from 'native-base';
+import { Container, Content, List } from 'native-base';
 import { Alert, View, ActivityIndicator, Text, ScrollView,RefreshControl } from 'react-native'; 
 import { getArticles } from '../servizi/news';
 import DataItem from '../component/dataItem'
 import Modal from '../component/modal';
+
+// tab Business
 
 export default class Tab2 extends Component {
 

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Right, Button } from 'native-base';
-import { Alert, View, ActivityIndicator, Text, FlatList, ScrollView, RefreshControl } from 'react-native'; 
+import { Container, Content, List} from 'native-base';
+import { Alert, View, ActivityIndicator, ScrollView, RefreshControl } from 'react-native'; 
 import { getArticles } from '../servizi/news';
 import DataItem from '../component/dataItem'
 import Modal from '../component/modal';
+
+// tab Sport
 
 export default class ListThumbnailExample extends Component {
 
@@ -45,6 +47,7 @@ export default class ListThumbnailExample extends Component {
     )
   }
 
+  //pull to refresh funzione
   _onRefresh = () => {
     this.setState({ refreshing: true });
     setTimeout(() => {
@@ -76,7 +79,7 @@ export default class ListThumbnailExample extends Component {
 
     return (
       <Container>
-        <ScrollView 
+       <ScrollView 
           contentContainerStyle={{flex: 1}}
           refreshControl={ 
           <RefreshControl 
